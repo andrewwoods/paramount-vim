@@ -1,13 +1,17 @@
 "###############################################################################
 "
-" Paramount 
+" Paramount
 "
 "###############################################################################
 "
 " Author: Andrew Woods
 " Date Created: 2022 Nov 16 Wed
-" Version: 0.0.0 
-" 
+" Date Updated: 2022 Nov 19 Sat
+" Version: 0.1.0
+"
+" Use this to display/test highlight groups and their current settings
+" :so $VIMRUNTIME/syntax/hitest.vim
+"
 
 hi clear
 
@@ -26,16 +30,18 @@ if version > 580
 endif
 let g:colors_name="paramount"
 
+
+
 "===========================================================
 "
-" Functions 
+" Functions
 "
 "===========================================================
 
-" 
+"
 " Create settings value for a highlight group
 "
-" @param String group Tne name of the entity to 
+" @param String group Tne name of the entity to
 " @param Object settings Defines color and style values
 " @param Object styles Defines style attributes
 "
@@ -101,27 +107,76 @@ let s:underline = "underline"
 
 "===========================================================
 "
-" Settings 
+" Settings
 "
 "===========================================================
 
-call s:hi("Normal", { "fg": s:white, "bg": s:black })
+call s:hi("Normal", { "fg": s:soft_white, "bg": s:black })
+call s:hi("ErrorMsg", { "fg": s:white, "bg": s:bet_red } )
+call s:hi("WarningMsg", { "fg": s:paramount_navy, "bg": s:orange } )
+call s:hi("NonText", { "fg": s:paramount_sky }, {"gui": s:bold} )
+call s:hi("Cursor", { "fg": s:paramount_navy, "bg": s:paramount_green }, {"gui": s:bold} )
 
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-" User Interface 
+" User Interface
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 call s:hi("LineNr", { "fg": s:white, "bg": s:paramount_navy })
-call s:hi("LineNrAbove", { "fg": s:paramount_sky, "bg": s:paramount_navy })
-call s:hi("LineNrBelow", { "fg": s:white, "bg": s:paramount_navy })
-call s:hi("CursorLineNr", { "fg": s:white, "bg": s:paramount_navy} )
-
-
+call s:hi("LineNrAbove", { "fg": s:paramount_navy, "bg": s:paramount_sky })
+call s:hi("LineNrBelow", { "fg": s:paramount_navy, "bg": s:paramount_sky })
+call s:hi("CursorColumn", { "fg": s:soft_white, "bg": s:paramount_navy})
+call s:hi("CursorLine", { "fg": s:soft_white, "bg": s:paramount_navy}, {"term": "bold", "gui": "bold"})
+call s:hi("CursorLineNr", { "fg": s:paramount_navy, "bg": s:paramount_green})
+call s:hi("ColorColumn", { "fg": s:soft_white, "bg": s:darker_gray})
+call s:hi("SignColumn", { "fg": s:white, "bg": s:paramount_navy })
 
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-" Programming Syntax 
+" User Experience
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-call s:hi("Comment", { "fg": s:medium_gray} )
+call s:hi("IncSearch", { "fg": s:paramount_navy, "bg": s:paramount_green }, {"gui": s:bold} )
+call s:hi("Search", { "fg": s:paramount_navy, "bg": s:paramount_sky }, {"gui": s:bold} )
+call s:hi("SpellBad", { "fg": s:light_goldenrod }, {"gui": s:curly_underline} )
+call s:hi("MoreMsg", { "fg": s:light_purple } )
+call s:hi("ModeMsg", { "fg": s:orange } )
+call s:hi("Visual", { "fg": s:light_goldenrod } )
+call s:hi("Folded", { "fg": s:light_purple } )
+call s:hi("FoldColumn", { "fg": s:paramount_sky } )
+call s:hi("MatchParen", { "fg": s:paramount_green } )
+call s:hi("Todo", { "fg": s:orange }, {"gui": s:bold } )
 
+call s:hi("Pmenu", { "fg": s:paramount_navy, "bg": s:paramount_sky } )
+call s:hi("PmenuSel", { "fg": s:paramount_sky, "bg": s:paramount_navy } )
+call s:hi("PmenuSbar", { "fg": s:paramount_navy, "bg": s:light_goldenrod } )
+call s:hi("PmenuThumb", { "fg": s:paramount_navy, "bg": s:light_purple } )
+
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" Programming Syntax
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+call s:hi("Bolean", { "fg": s:light_purple }, {"gui": s:bold} )
+call s:hi("Boolean", { "fg": s:light_purple }, {"gui": s:bold} )
+call s:hi("Character", { "fg": s:yellow} )
+call s:hi("Comment", { "fg": s:medium_gray })
+call s:hi("Constant", { "fg": s:light_purple }, {"gui": s:bold} )
+call s:hi("Define", { "fg": s:white }, {"gui": s:bold} )
+call s:hi("Function", { "fg": s:light_blue }, {"term": s:bold, "gui": s:bold} )
+call s:hi("Identifier", { "fg": s:light_blue }, {"gui": s:bold} )
+call s:hi("Number", { "fg": s:orange } )
+call s:hi("PreProc", { "fg": s:bet_red }, {"gui": s:bold} )
+call s:hi("Statement", { "fg": s:white }, {"term": s:bold, "gui": s:bold} )
+call s:hi("String", { "fg": s:paramount_green } )
+call s:hi("Title", { "fg": s:bet_red }, {"gui": s:bold} )
+call s:hi("Type", { "fg": s:light_blue }, {"gui": s:bold} )
+call s:hi("Conditional", { "fg": s:white }, {"gui": s:bold} )
+call s:hi("Keyword", { "fg": s:hot_pink, "bg": s:paramount_green } )
+
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" Diff
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+call s:hi("DiffAdd", { "fg": s:paramount_green } )
+call s:hi("DiffDelete", { "fg": s:bet_red } )
+call s:hi("DiffChange", { "fg": s:light_goldenrod } )
+call s:hi("DiffText", { "fg": s:light_purple } )
 
