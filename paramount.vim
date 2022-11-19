@@ -39,12 +39,15 @@ let g:colors_name="paramount"
 " @param Object settings Defines color and style values
 " @param Object styles Defines style attributes
 "
-function! s:hi(group, settings)
+function! s:hi(group, settings, style={})
   execute "highlight" a:group
-  \ "guifg=" (has_key(a:settings, "fg")  ? a:settings.fg.gui : "NONE")
-  \ "guibg=" (has_key(a:settings, "bg")  ? a:settings.bg.gui : "NONE")
-  \ "guisp=" (has_key(a:settings, "sp")  ? a:settings.sp.gui : "NONE")
-  \ "gui="   (has_key(a:settings, "gui") ? a:settings.gui    : "NONE")
+  \ "guifg=" (has_key(a:settings, "fg") ? a:settings.fg.gui : "NONE")
+  \ "guibg=" (has_key(a:settings, "bg") ? a:settings.bg.gui : "NONE")
+  \ "guisp=" (has_key(a:settings, "sp") ? a:settings.fg.gui : "NONE")
+  \ "gui="   (has_key(a:style, "gui")  ? a:style.gui : "NONE")
+  \ "ctermfg=" (has_key(a:settings, "fg") ? a:settings.fg.term : "NONE")
+  \ "ctermbg=" (has_key(a:settings, "bg") ? a:settings.bg.term : "NONE")
+  \ "cterm=" (has_key(a:style, "term") ? a:style.term : "NONE")
 endfunction
 
 
