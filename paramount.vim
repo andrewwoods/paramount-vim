@@ -54,47 +54,50 @@ endfunction
 
 "===========================================================
 "
-" Legend 
+" Legend
 "
 "===========================================================
 
-let s:paramount_navy = { "gui": "#000a3c", "term": "17" }
-let s:paramount_blue = { "gui": "#023f8c", "term": "19" }
-let s:paramount_aqua = { "gui": "#80e9ed", "term": "87" }
-let s:paramount_sky = { "gui": "#1474ff", "term": "27" }
-let s:paramount_green = { "gui": "#00D86D", "term": "41" }
-let s:black = { "gui": "#1c1b1c", "term": "234" }
-let s:white = { "gui": "#ffffff", "term": "" }
-let s:dark_gray = { "gui": "#3a3a39", "term": "237" }
-let s:medium_gray = { "gui": "#898989", "term": "243" }
-let s:light_gray = { "gui": "#b2b2b2", "term": "249" }
-let s:soft_white = { "gui": "#ececec", "term": "252" }
+let s:paramount_navy = { "gui": "#00005f", "term": 17 }
+let s:paramount_blue = { "gui": "#0000af", "term": 19 }
+let s:paramount_sky  = { "gui": "#0087ff", "term": 33 }
+let s:paramount_aqua = { "gui": "#5fffff", "term": 87 }
+let s:paramount_green = { "gui": "#00d75f", "term": 41 }
+let s:bet_red = { "gui": "#ff6060", "term": "198" }
+
+let s:light_blue = { "gui": "#5fafff", "term": 75 }
+let s:black = { "gui": "#121212", "term": 233 }
+let s:white = { "gui": "#ffffff", "term": 15 }
+let s:darker_gray = { "gui": "#1c1c1c", "term": 234 }
+let s:dark_gray = { "gui": "#3a3a3a", "term": 237 }
+let s:medium_gray = { "gui": "#767676", "term": 243 }
+let s:light_gray = { "gui": "#b2b2b2", "term": 249 }
+let s:soft_white = { "gui": "#d0d0d0", "term": 252 }
+let s:purple = { "gui": "#5f0087", "term": 54 }
+let s:light_purple = { "gui": "#af87ff", "term": 141 }
+let s:light_goldenrod = { "gui": "#ffd787", "term": 222 }
+let s:yellow = { "gui": "#ffff5f", "term": 227 }
+let s:orange = { "gui": "#ffaf00", "term": 214 }
 
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-" Styles 
+" Styles
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-let s:bold = { "term": "bold" }
-let s:underline = { "term": "underline" }
-let s:undercurl = { "term": "undercurl" }
-let s:underdouble = { "term": "underdouble" }
-let s:underdotted = { "term": "underdotted" }
-let s:underdashed = { "term": "underdashed" }
-let s:strikethrough = { "term": "strikethrough" }
-let s:reverse = { "term": "reverse" }
-let s:italic = { "term": "italic" }
-let s:standout = { "term": "standout" }
-let s:no_combine = { "term": "nocombine" }
-let s:none = { "term": "NONE" }
-
-"
-" Style Aliases
-"
+let s:bold = "bold"
+let s:curly_underline = "undercurl"
+let s:dashed_underline = "underdashed"
+let s:dotted_underline = "underdotted"
+let s:double_underline = "underdouble"
+let s:italic = "italic"
+let s:no_combine = "nocombine"
+let s:none = "NONE"
+let s:reverse = "reverse"
+let s:standout = "standout"
+let s:strikethrough = "strikethrough"
 let s:strikethru = s:strikethrough
-let s:curly_underline = s:undercurl
-let s:double_underline = s:underdouble
-let s:dotted_underline = s:underdotted
-let s:dashed_underline = s:underdashed
+let s:underline = "underline"
+
+
 
 "===========================================================
 "
